@@ -24,6 +24,7 @@ function Pools() {
   }
 
   const tokenHoldings = new Set(account?.holdings?.map(holding => holding.token.token_id))
+  const tokenSymbols = new Set(account?.holdings?.map(holding => holding.token.symbol))
 
   const onDeposit = pool => {
     setShowDeposit(true)
@@ -99,7 +100,7 @@ function Pools() {
                 <div>
                   <p className="text-sm leading-none text-gray-500 dark:text-gray-400">{pool.name}</p>
                   <p className="text-sm leading-none text-gray-500 dark:text-gray-200">({pool.token.symbol})</p>
-                  <p className="text-4xl font-semibold leading-9 pt-4 text-gray-800 dark:text-gray-100">{pool.amount / 10 ** pool.token.decimals}</p>
+                  <p className="text-4xl font-semibold leading-9 pt-4 text-gray-800 dark:text-gray-100">{parseFloat((pool.amount / 10 ** pool.token.decimals).toFixed(3))}</p>
                 </div>
                 <div className="w-8 h-8 bg-blue-100 rounded flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -113,7 +114,7 @@ function Pools() {
             </div>
             <div className="items-center px-4 pb-4 flex flex-wrap">
               {/* Code block for gray button starts */}
-              {parseInt(pool.amount) > 0 && tokenHoldings.has(pool.token.token_id) &&
+              {parseInt(pool.amount) > 0 && tokenSymbols.has(`${pool.token.symbol}:LP:RECEIPT`) &&
                 <button className="mx-2 my-2 bg-red-100 transition duration-150 ease-in-out hover:bg-red-200 rounded border border-red-300 text-red-600 px-5 py-1 text-xs" onClick={() => onClaim(pool)}>Claim</button>
               }
               {/* Code block for gray button ends */}
