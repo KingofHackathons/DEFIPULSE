@@ -3,13 +3,13 @@ const sections = {
   pool: { title: 'Pool',  key: 'pool' },
   bridge: { title: 'Bridge',  key: 'bridge' },
   reward: { title: 'Reward',  key: 'reward' },
-  trade: { title: 'Trade',  key: 'trade' },
+  project: { title: 'Projects',  key: 'project' },
 }
 
 const overviewSections = {
   my_account: { title: 'Account', key: 'my_account' },
   my_tokens: { title: 'Assets', key: 'my_tokens' },
-  mint_ft: { title: 'Mint Fungible Token (FT)', key: 'mint_ft' },
+  mint_ft: { title: 'Mint Fungible Token', key: 'mint_ft' },
   mint_dnft: { title: 'Mint Dynamic Token (dNFT)', key: 'mint_dnft' },
   // sandbox: { title: 'Testing Sandbox', key: 'sandbox' },
   // status: { title: 'Unibar Status', key: 'status' }

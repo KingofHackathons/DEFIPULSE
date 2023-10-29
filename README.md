@@ -1,4 +1,4 @@
-# Unibar Prototype for hedera21 hackathon
+# DEFIPLUS
 
 If you need a gasless interface, inbuilt private key management and basic ethereum auth. With minting, management, pooling and mint API capibility  
 
